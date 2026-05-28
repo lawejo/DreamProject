@@ -1,0 +1,222 @@
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-16) var(--gutter) 0;
+}
+
+.header {
+  text-align: center;
+  padding: var(--space-12) 0 var(--space-16);
+  border-bottom: var(--hairline);
+  margin-bottom: var(--space-16);
+}
+
+.title {
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: clamp(64px, 14vw, 160px);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin: var(--space-3) 0 var(--space-4);
+  color: var(--text);
+}
+
+.kicker {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  color: var(--text-mood);
+  font-size: clamp(15px, 2.2vw, 19px);
+  max-width: 32ch;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* synopsis */
+.synopsis {
+  max-width: 62ch;
+  margin: 0 auto var(--space-24);
+}
+
+.synopsisBody {
+  font-size: clamp(18px, 2.4vw, 22px);
+  line-height: 1.6;
+  color: var(--text);
+  margin-top: var(--space-4);
+}
+
+.synopsisNote {
+  margin-top: var(--space-6);
+  font-size: 12px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--red);
+  opacity: 0.8;
+}
+
+/* cast & crew */
+.castCrew {
+  max-width: 880px;
+  margin: 0 auto var(--space-24);
+}
+
+.castGrid {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.castCard {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-4);
+  background: var(--near-black);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+}
+
+.castPortrait {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #1a3340, #0d1f2a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+
+.castCard:nth-child(even) .castPortrait {
+  background: linear-gradient(135deg, #5a1010, #2a0808);
+}
+
+.castInitials {
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.castMeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.castName {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.castRole {
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* crew */
+.crewList {
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: var(--hairline);
+}
+
+.crewRow {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-6);
+  padding: var(--space-4) 0;
+  border-bottom: var(--hairline);
+}
+
+.crewRole {
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.crewName {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* why watch */
+.why {
+  margin: 0 auto;
+  padding-bottom: var(--space-16);
+}
+
+.whyGrid {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.whyCard {
+  padding: var(--space-6);
+  background: var(--near-black);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.whyNum {
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.06em;
+  color: var(--red);
+  line-height: 1;
+}
+
+.whyTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0;
+}
+
+.whyBody {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .page {
+    padding: var(--space-8) var(--gutter) 0;
+  }
+  .header {
+    padding: var(--space-6) 0 var(--space-12);
+    margin-bottom: var(--space-12);
+  }
+  .castGrid,
+  .whyGrid {
+    grid-template-columns: 1fr;
+  }
+  .crewRow {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+  .synopsis,
+  .castCrew,
+  .why {
+    margin-bottom: var(--space-16);
+  }
+}

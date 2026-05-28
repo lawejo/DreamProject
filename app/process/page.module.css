@@ -1,0 +1,160 @@
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-16) var(--gutter) 0;
+}
+
+.header {
+  text-align: center;
+  padding: var(--space-12) 0 var(--space-16);
+  border-bottom: var(--hairline);
+  margin-bottom: var(--space-16);
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+.title {
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: clamp(40px, 7vw, 80px);
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  margin: var(--space-3) 0 var(--space-6);
+  color: var(--text);
+}
+
+.kicker {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  color: var(--text-mood);
+  font-size: clamp(15px, 2vw, 18px);
+  line-height: 1.55;
+}
+
+/* alternating section: text + still */
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+  padding: var(--space-16) 0;
+  max-width: 1080px;
+  margin-inline: auto;
+}
+
+.section + .section {
+  border-top: var(--hairline);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 50ch;
+}
+
+.text p {
+  color: var(--text-dim);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.sectionTitle {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: var(--space-2);
+  letter-spacing: 0;
+}
+
+.sectionBlue .sectionTitle {
+  color: #8aa8bc;
+}
+
+.sectionRed .sectionTitle {
+  color: var(--red);
+}
+
+/* still figure */
+.still {
+  margin: 0;
+}
+
+.placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.placeholderBlue {
+  background: linear-gradient(160deg, #0d1f2a 0%, #1a3340 60%, #0a1620 100%);
+}
+
+.placeholderRed {
+  background: linear-gradient(160deg, #2a0808 0%, #5a1010 55%, #1f0606 100%);
+}
+
+.placeholderNeutral {
+  background: linear-gradient(160deg, #111 0%, #1a1a1a 60%, #0a0a0a 100%);
+}
+
+.still figcaption {
+  margin-top: var(--space-3);
+  font-size: 12px;
+  color: var(--text-faint);
+  letter-spacing: 0.02em;
+  font-style: italic;
+}
+
+/* transition strip — anchor for V2 blue→red wash */
+.transition {
+  max-width: 1080px;
+  margin: var(--space-8) auto;
+  padding: 0 var(--gutter);
+}
+
+.transitionBar {
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--blue-deep) 0%,
+    var(--blue-deep) 30%,
+    #3a1f25 50%,
+    var(--red-mid) 70%,
+    var(--red-mid) 100%
+  );
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+/* mobile: stack and reverse image-first sections so the text always reads naturally on top */
+@media (max-width: 768px) {
+  .page {
+    padding: var(--space-8) var(--gutter) 0;
+  }
+  .header {
+    padding: var(--space-6) 0 var(--space-12);
+    margin-bottom: var(--space-8);
+  }
+  .section {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding: var(--space-12) 0;
+  }
+  /* swap order so text leads on every section */
+  .sectionBlue {
+    direction: ltr;
+  }
+  .sectionBlue .text {
+    order: -1;
+  }
+  .section .text {
+    order: -1;
+  }
+}

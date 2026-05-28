@@ -1,0 +1,138 @@
+.home {
+  padding-top: var(--space-16);
+}
+
+.heroTop {
+  text-align: center;
+  padding: var(--space-8) var(--gutter) var(--space-12);
+}
+
+.tagline {
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-mood);
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.bullet {
+  margin: 0 var(--space-3);
+  color: var(--red);
+  opacity: 0.7;
+}
+
+.posters {
+  padding: 0 var(--gutter);
+}
+
+.postersInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.doorways {
+  margin-top: var(--space-24);
+  padding: 0 var(--gutter);
+}
+
+.doorwayList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.doorwayItem {
+  border-right: var(--hairline);
+  border-top: var(--hairline);
+  border-bottom: var(--hairline);
+}
+
+.doorwayItem:first-child {
+  border-left: var(--hairline);
+}
+
+.doorway {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-8) var(--space-6);
+  color: var(--text);
+  height: 100%;
+  transition: background-color 0.25s ease;
+}
+
+.doorway:hover {
+  background: rgba(232, 65, 42, 0.04);
+}
+
+.doorwayLabel {
+  font-size: 13px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.arrow {
+  color: var(--red);
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.doorway:hover .arrow,
+.doorway:focus-visible .arrow {
+  transform: translateX(6px);
+}
+
+.doorwayTeaser {
+  font-size: 14px;
+  color: var(--text-dim);
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding-top: var(--space-8);
+  }
+  .heroTop {
+    padding: var(--space-6) var(--gutter) var(--space-8);
+  }
+  .tagline {
+    font-size: 10px;
+  }
+  .doorways {
+    margin-top: var(--space-16);
+  }
+  .doorwayList {
+    grid-template-columns: 1fr;
+  }
+  .doorwayItem {
+    border-right: var(--hairline);
+    border-left: var(--hairline);
+    border-bottom: 0;
+  }
+  .doorwayItem:last-child {
+    border-bottom: var(--hairline);
+  }
+  .doorway {
+    padding: var(--space-6) var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .bullet {
+    display: block;
+    margin: var(--space-1) 0;
+  }
+}
