@@ -1,9 +1,12 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import type { ComponentProps } from "react";
+import type { ReactNode } from "react";
 
-type RevealProps = ComponentProps<"div"> & {
+type RevealProps = {
+  children: ReactNode;
+  className?: string;
+  "aria-label"?: string;
   delay?: number; // ms
   duration?: number; // ms
   y?: number; // px to drift up from
@@ -14,17 +17,23 @@ export default function Reveal({
   duration = 700,
   y = 14,
   children,
-  ...rest
+  className,
+  "aria-label": ariaLabel,
 }: RevealProps) {
   const reduced = useReducedMotion();
 
   if (reduced) {
-    return <div {...rest}>{children}</div>;
+    return (
+      <div className={className} aria-label={ariaLabel}>
+        {children}
+      </div>
+    );
   }
 
   return (
     <motion.div
-      {...rest}
+      className={className}
+      aria-label={ariaLabel}
       initial={{ opacity: 0, y }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
