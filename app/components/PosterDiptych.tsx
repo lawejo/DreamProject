@@ -14,7 +14,7 @@ export default function PosterDiptych({
 }: PosterProps) {
   return (
     <div className={styles.diptych}>
-      <figure className={`${styles.poster} ${styles.blue}`}>
+      <figure className={`${styles.poster} ${styles.blue}`} tabIndex={0}>
         <div className={styles.frame}>
           {blueSrc ? (
             <Image
@@ -44,7 +44,7 @@ export default function PosterDiptych({
         )}
       </figure>
 
-      <figure className={`${styles.poster} ${styles.red}`}>
+      <figure className={`${styles.poster} ${styles.red}`} tabIndex={0}>
         <div className={styles.frame}>
           {redSrc ? (
             <Image

@@ -6,7 +6,7 @@
 
 .header {
   text-align: center;
-  padding: var(--space-12) 0 var(--space-16);
+  padding: var(--space-12) 0 var(--space-12);
   border-bottom: var(--hairline);
   margin-bottom: var(--space-16);
   max-width: 60ch;
@@ -15,9 +15,9 @@
 
 .title {
   font-family: var(--font-display), Impact, sans-serif;
-  font-size: clamp(40px, 7vw, 80px);
-  letter-spacing: 0.02em;
-  line-height: 1.05;
+  font-size: clamp(48px, 10vw, 110px);
+  letter-spacing: 0.04em;
+  line-height: 1;
   margin: var(--space-3) 0 var(--space-6);
   color: var(--text);
 }
@@ -30,12 +30,44 @@
   line-height: 1.55;
 }
 
-/* gallery grid — asymmetric, masonry-ish */
-.gallery {
-  padding-bottom: var(--space-16);
+/* locations */
+.locations {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  padding-bottom: var(--space-24);
 }
 
-.grid {
+.location {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.locationHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border-left: 2px solid var(--red);
+  padding-left: var(--space-4);
+}
+
+.locationName {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0;
+}
+
+.locationContext {
+  font-size: 14px;
+  color: var(--text-dim);
+  letter-spacing: 0;
+  line-height: 1.55;
+}
+
+/* tile grid */
+.tileGrid {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -50,12 +82,12 @@
   flex-direction: column;
 }
 
-.tall {
-  grid-row: span 2;
-}
-
 .wide {
   grid-column: span 2;
+}
+
+.tall {
+  grid-row: span 2;
 }
 
 .fig {
@@ -121,7 +153,7 @@
 
 /* responsive */
 @media (max-width: 900px) {
-  .grid {
+  .tileGrid {
     grid-template-columns: repeat(2, 1fr);
   }
   .wide {
@@ -137,10 +169,13 @@
     padding: var(--space-8) var(--gutter) 0;
   }
   .header {
-    padding: var(--space-6) 0 var(--space-12);
-    margin-bottom: var(--space-8);
+    padding: var(--space-6) 0 var(--space-10);
+    margin-bottom: var(--space-10);
   }
-  .grid {
+  .locations {
+    gap: var(--space-16);
+  }
+  .tileGrid {
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
   }

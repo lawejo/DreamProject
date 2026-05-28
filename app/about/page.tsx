@@ -8,36 +8,96 @@ export const metadata: Metadata = {
 };
 
 const cast = [
-  { name: "Angela Ibarra", role: "Lead" },
-  { name: "Syan Singh", role: "Lead" },
+  { name: "Angela Ibarra", role: "Angie" },
+  { name: "Syan Singh", role: "Syan" },
 ];
 
-const crew = [
-  { name: "Dawid Dyrda", role: "Director" },
+const credits = [
+  { role: "Directed by", names: "Dawid Dyrda" },
   {
-    name: "Syan Singh · Angela Ibarra · Janice Rozario · Dawid Dyrda · Felicia Thomassen",
-    role: "Screenplay",
+    role: "Screenplay by",
+    names:
+      "Syan Singh, Angela Ibarra, Janice Rozario, Dawid Dyrda & Felicia Thomassen",
   },
-  { name: "Maciej Gach", role: "Cinematography" },
-  { name: "Maciej Gach · Felicia Thomassen", role: "Editing" },
-  { name: "Janice Rozario · Felicia Thomassen", role: "Music" },
+  { role: "Music by", names: "Janice Rozario & Felicia Thomassen" },
+  { role: "Cinematography by", names: "Maciej Gach" },
+  { role: "Edited by", names: "Maciej Gach & Felicia Thomassen" },
 ];
 
-const whyWatch = [
+function IconBook() {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+      <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+      <path d="M3 6l0 13" />
+      <path d="M12 6l0 13" />
+      <path d="M21 6l0 13" />
+    </svg>
+  );
+}
+
+function IconEye() {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="2" />
+      <path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" />
+    </svg>
+  );
+}
+
+function IconFlame() {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12 12c2 -2.96 0 -7 -1 -8c0 3.038 -1.773 4.741 -3 6c-1.226 1.26 -2 3.24 -2 5a5 5 0 0 0 10 0c0 -1.532 -1.056 -3.94 -2 -5c-1.786 3 -2.791 3 -2 2z" />
+    </svg>
+  );
+}
+
+const hooks = [
   {
-    n: "01",
-    title: "Adapted from the bestseller",
-    body: "A book that built a following before the screen ever caught up. The screenplay keeps faith with what made readers ache.",
+    icon: <IconBook />,
+    title: "Adapted from the page",
+    body: "A small, faithful adaptation of a bestselling novel about loneliness and longing.",
   },
   {
-    n: "02",
-    title: "Two worlds, one love",
-    body: "A blue romance and a red psychological. A film designed as a diptych — tender naturalism on one side, stylised dread on the other.",
+    icon: <IconEye />,
+    title: "Two worlds, one film",
+    body: "A blue half and a red half — a romance and the mind behind it.",
   },
   {
-    n: "03",
-    title: "Two leads worth watching",
-    body: "Angela Ibarra and Syan Singh carry the dual-tone weight of the film, on and off the page — both also co-wrote it.",
+    icon: <IconFlame />,
+    title: "A debut with teeth",
+    body: "A student production with the ambition of a first feature.",
   },
 ];
 
@@ -45,33 +105,47 @@ export default function AboutPage() {
   return (
     <article className={styles.page}>
       <header className={styles.header}>
-        <p className="label">About the film</p>
-        <h1 className={styles.title}>DREAM</h1>
-        <p className={styles.kicker}>
-          A psycho-romance, adapted from the bestselling novel.
-        </p>
+        <p className="label">About</p>
+        <h1 className={styles.title}>The film</h1>
       </header>
 
       <section className={styles.synopsis} aria-labelledby="synopsis-h">
-        <h2 id="synopsis-h" className="label">
+        <h2 id="synopsis-h" className="sr-only">
           Synopsis
         </h2>
-        <p className={`serif ${styles.synopsisBody}`}>
-          Two people meet. The world around them softens — a forest at dusk,
-          breath visible in the cold. Then it sharpens, shifts, turns the wrong
-          colour. A romance lived under fluorescent reds, edges humming with
-          something neither of them will name out loud. Some dreams feel too
-          real. Some begin to want more of you than you meant to give.
-        </p>
-        <p className={styles.synopsisNote}>
-          Coming soon. No release date announced.
-        </p>
+        <div className={`serif ${styles.synopsisBody}`}>
+          <p>A lonely college student meets a girl at a castle.</p>
+          <p>
+            What follows is everything he&apos;s been waiting for — long walks,
+            late afternoons at the amusement park, quiet hours at the movies, a
+            closeness he didn&apos;t know he was capable of.
+          </p>
+          <p>
+            Then a sunset on the beach asks whether any of it was real.
+          </p>
+        </div>
+      </section>
+
+      <section className={styles.why} aria-labelledby="why-h">
+        <h2 id="why-h" className={styles.subhead}>
+          Why watch
+        </h2>
+        <ul className={styles.whyGrid}>
+          {hooks.map((h) => (
+            <li key={h.title} className={styles.whyCard}>
+              <span className={styles.whyIcon}>{h.icon}</span>
+              <h3 className={styles.whyTitle}>{h.title}</h3>
+              <p className={styles.whyBody}>{h.body}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className={styles.castCrew} aria-labelledby="cast-h">
-        <h2 id="cast-h" className="label">
-          Cast
+        <h2 id="cast-h" className={styles.subhead}>
+          Cast &amp; crew
         </h2>
+
         <ul className={styles.castGrid}>
           {cast.map((c) => (
             <li key={c.name} className={styles.castCard}>
@@ -91,32 +165,14 @@ export default function AboutPage() {
           ))}
         </ul>
 
-        <h2 className="label" style={{ marginTop: "var(--space-12)" }}>
-          Key crew
-        </h2>
         <dl className={styles.crewList}>
-          {crew.map((c) => (
+          {credits.map((c) => (
             <div key={c.role} className={styles.crewRow}>
               <dt className={styles.crewRole}>{c.role}</dt>
-              <dd className={styles.crewName}>{c.name}</dd>
+              <dd className={styles.crewName}>{c.names}</dd>
             </div>
           ))}
         </dl>
-      </section>
-
-      <section className={styles.why} aria-labelledby="why-h">
-        <h2 id="why-h" className="label">
-          Why watch
-        </h2>
-        <ul className={styles.whyGrid}>
-          {whyWatch.map((w) => (
-            <li key={w.n} className={styles.whyCard}>
-              <span className={styles.whyNum}>{w.n}</span>
-              <h3 className={styles.whyTitle}>{w.title}</h3>
-              <p className={styles.whyBody}>{w.body}</p>
-            </li>
-          ))}
-        </ul>
       </section>
     </article>
   );

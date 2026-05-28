@@ -1,0 +1,29 @@
+/* break out of the parent's max-width to full viewport bleed */
+.wash {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: var(--space-16) var(--gutter);
+  border-top: var(--hairline);
+  border-bottom: var(--hairline);
+  will-change: background-color;
+}
+
+.inner {
+  max-width: 880px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-8);
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .wash {
+    padding: var(--space-10) var(--gutter);
+  }
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}

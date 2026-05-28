@@ -4,123 +4,174 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Behind the scenes — DREAM",
   description:
-    "Set photos and stories from the production of DREAM, including the forest shoot and the red-corridor lighting setup.",
+    "Set photos and stories from the production of DREAM, grouped by shoot location.",
 };
+
+type Tone = "blue" | "red" | "neutral";
 
 type Tile = {
-  id: string;
-  tone: "blue" | "red" | "neutral";
-  caption?: string;
-  span?: "tall" | "wide";
   label: string;
+  caption: string;
+  span?: "wide" | "tall";
 };
 
-const tiles: Tile[] = [
+type Location = {
+  id: string;
+  name: string;
+  tone: Tone;
+  context: string;
+  tiles: Tile[];
+};
+
+const locations: Location[] = [
   {
-    id: "1",
-    tone: "blue",
-    label: "forest · day 1",
-    caption: "First setup. Nobody's hands worked. Eight degrees.",
-    span: "tall",
-  },
-  {
-    id: "2",
+    id: "canteen",
+    name: "The canteen",
     tone: "neutral",
-    label: "between takes",
+    context: "The opening. Cameras hidden among real students.",
+    tiles: [
+      {
+        label: "still · canteen wide",
+        caption: "Where Syan begins — alone in the noise.",
+        span: "wide",
+      },
+    ],
   },
   {
-    id: "3",
-    tone: "red",
-    label: "corridor · lighting check",
-    caption: "Maciej and a single gelled bulb. The whole half of the film.",
-    span: "wide",
-  },
-  {
-    id: "4",
+    id: "castle",
+    name: "The castle",
     tone: "blue",
-    label: "rehearsal",
-    caption: "Angela running the second forest scene a fifth time.",
+    context: "Their first meeting.",
+    tiles: [
+      {
+        label: "still · castle approach",
+        caption: "We waited three afternoons for the sky to behave.",
+      },
+      {
+        label: "still · castle interior",
+        caption: "First scene with Angela and Syan in the same frame.",
+      },
+    ],
   },
   {
-    id: "5",
-    tone: "neutral",
-    label: "the script",
-    caption: "Five names on the cover.",
-  },
-  {
-    id: "6",
+    id: "dorm",
+    name: "The dorm",
     tone: "red",
-    label: "corridor · take 12",
-    caption: "Syan asked for it. Syan got it.",
+    context: "Frustration, the bathroom mirror, head underwater.",
+    tiles: [
+      {
+        label: "still · mirror",
+        caption: "The scene that needed both a camera and a GoPro.",
+      },
+      {
+        label: "still · underwater",
+        caption: "Take seventeen.",
+        span: "tall",
+      },
+    ],
   },
   {
-    id: "7",
+    id: "montage",
+    name: "Amusement park · cinema · bench",
     tone: "blue",
-    label: "the forest at 5am",
-    span: "wide",
+    context: "The montage scenes — the blue half of the film.",
+    tiles: [
+      {
+        label: "still · park",
+        caption: "The blue half of the film.",
+      },
+      {
+        label: "still · cinema",
+        caption: "Two people watching the same thing differently.",
+      },
+      {
+        label: "still · bench",
+        caption: "The bench was a real bench. Nobody moved it.",
+      },
+    ],
   },
   {
-    id: "8",
-    tone: "neutral",
-    label: "lunch · day 4",
-    caption: "Catering was excellent. The director was not.",
-  },
-  {
-    id: "9",
+    id: "beach",
+    name: "The beach",
     tone: "red",
-    label: "blocking",
-    caption: "Working out how a silhouette moves when it's not meant to be a silhouette yet.",
+    context: "The ending.",
+    tiles: [
+      {
+        label: "still · beach sunset",
+        caption: "Filmed at sunset. We had about twenty minutes.",
+        span: "wide",
+      },
+    ],
   },
 ];
+
+function toneClass(tone: Tone) {
+  return tone === "blue"
+    ? styles.placeholderBlue
+    : tone === "red"
+      ? styles.placeholderRed
+      : styles.placeholderNeutral;
+}
 
 export default function BehindTheScenesPage() {
   return (
     <article className={styles.page}>
       <header className={styles.header}>
         <p className="label">Behind the scenes</p>
-        <h1 className={styles.title}>Set photos & stories</h1>
+        <h1 className={styles.title}>Behind the scenes</h1>
         <p className={styles.kicker}>
-          A few moments from the shoot. Some staged, most not.
+          A small crew, a few real locations, and a lot of waiting for the
+          light.
         </p>
       </header>
 
-      <section className={styles.gallery} aria-label="Behind the scenes gallery">
-        <ul className={styles.grid}>
-          {tiles.map((tile) => (
-            <li
-              key={tile.id}
-              className={`${styles.cell} ${
-                tile.span === "tall"
-                  ? styles.tall
-                  : tile.span === "wide"
-                    ? styles.wide
-                    : ""
-              }`}
-            >
-              <figure className={styles.fig}>
-                <div
-                  className={`${styles.placeholder} ${
-                    tile.tone === "blue"
-                      ? styles.placeholderBlue
-                      : tile.tone === "red"
-                        ? styles.placeholderRed
-                        : styles.placeholderNeutral
+      <div className={styles.locations}>
+        {locations.map((loc) => (
+          <section
+            key={loc.id}
+            className={styles.location}
+            aria-labelledby={`loc-${loc.id}`}
+          >
+            <header className={styles.locationHeader}>
+              <h2 id={`loc-${loc.id}`} className={styles.locationName}>
+                {loc.name}
+              </h2>
+              <p className={styles.locationContext}>{loc.context}</p>
+            </header>
+            <ul className={styles.tileGrid}>
+              {loc.tiles.map((tile, i) => (
+                <li
+                  key={i}
+                  className={`${styles.cell} ${
+                    tile.span === "wide"
+                      ? styles.wide
+                      : tile.span === "tall"
+                        ? styles.tall
+                        : ""
                   }`}
-                  role="img"
-                  aria-label={tile.label}
                 >
-                  <span className={styles.placeholderText}>{tile.label}</span>
-                </div>
-                {tile.caption && (
-                  <figcaption className={styles.caption}>
-                    {tile.caption}
-                  </figcaption>
-                )}
-              </figure>
-            </li>
-          ))}
-        </ul>
-      </section>
+                  <figure className={styles.fig}>
+                    <div
+                      className={`${styles.placeholder} ${toneClass(loc.tone)}`}
+                      role="img"
+                      aria-label={tile.label}
+                    >
+                      <span className={styles.placeholderText}>
+                        {tile.label}
+                      </span>
+                    </div>
+                    {tile.caption && (
+                      <figcaption className={styles.caption}>
+                        {tile.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
 
       <section className={styles.outro}>
         <p className={`serif ${styles.outroText}`}>

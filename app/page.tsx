@@ -24,28 +24,36 @@ const doorways = [
 export default function HomePage() {
   return (
     <div className={styles.home}>
-      <Reveal className={styles.heroTop} delay={50}>
-        <p className={styles.tagline}>
-          A psycho-romance
-          <span className={styles.bullet}>·</span>
-          Adapted from the bestselling novel
-        </p>
-      </Reveal>
+      <section className={styles.hero}>
+        <Reveal delay={50}>
+          <p className={styles.tagline}>
+            A psycho-romance
+            <span className={styles.bullet}>·</span>
+            Adapted from the bestselling novel
+          </p>
+        </Reveal>
 
-      <Reveal className={styles.posters} delay={250}>
+        <Reveal delay={250}>
+          <h1 className={styles.wordmark}>DREAM</h1>
+        </Reveal>
+
+        <Reveal delay={450}>
+          <p className={styles.subtagline}>Some dreams feel too real.</p>
+        </Reveal>
+      </section>
+
+      <section className={styles.posters}>
         <div className={styles.postersInner}>
           <PosterDiptych
             blueSrc="/images/BluePoster.jpeg"
             redSrc="/images/RedPoster.jpeg"
           />
         </div>
-      </Reveal>
+      </section>
 
-      <Reveal
-        className={styles.doorways}
-        delay={450}
-        aria-label="Explore the site"
-      >
+      <p className={styles.status}>Coming soon.</p>
+
+      <section className={styles.doorways} aria-label="Explore the site">
         <ul className={styles.doorwayList}>
           {doorways.map((d) => (
             <li key={d.href} className={styles.doorwayItem}>
@@ -61,7 +69,7 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
-      </Reveal>
+      </section>
     </div>
   );
 }

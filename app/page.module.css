@@ -1,10 +1,15 @@
 .home {
-  padding-top: var(--space-16);
+  padding-top: var(--space-12);
 }
 
-.heroTop {
+/* hero block: tagline, wordmark, sub-tagline */
+.hero {
   text-align: center;
-  padding: var(--space-8) var(--gutter) var(--space-12);
+  padding: var(--space-12) var(--gutter) var(--space-12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
 }
 
 .tagline {
@@ -22,6 +27,25 @@
   opacity: 0.7;
 }
 
+.wordmark {
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: clamp(72px, 16vw, 200px);
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  color: var(--red);
+  text-transform: uppercase;
+  margin: var(--space-2) 0 var(--space-1);
+}
+
+.subtagline {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  color: var(--text-mood);
+  font-size: clamp(15px, 2vw, 19px);
+  line-height: 1.5;
+}
+
+/* posters */
 .posters {
   padding: 0 var(--gutter);
 }
@@ -31,8 +55,20 @@
   margin: 0 auto;
 }
 
+/* status — between posters and doorways */
+.status {
+  text-align: center;
+  margin: var(--space-12) auto 0;
+  font-size: 12px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 500;
+}
+
+/* doorways */
 .doorways {
-  margin-top: var(--space-24);
+  margin-top: var(--space-16);
   padding: 0 var(--gutter);
 }
 
@@ -103,16 +139,20 @@
 
 @media (max-width: 768px) {
   .home {
-    padding-top: var(--space-8);
+    padding-top: var(--space-6);
   }
-  .heroTop {
-    padding: var(--space-6) var(--gutter) var(--space-8);
+  .hero {
+    padding: var(--space-6) var(--gutter) var(--space-10);
+    gap: var(--space-3);
   }
   .tagline {
     font-size: 10px;
   }
+  .status {
+    margin-top: var(--space-8);
+  }
   .doorways {
-    margin-top: var(--space-16);
+    margin-top: var(--space-12);
   }
   .doorwayList {
     grid-template-columns: 1fr;

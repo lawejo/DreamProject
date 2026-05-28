@@ -6,28 +6,27 @@
 
 .header {
   text-align: center;
-  padding: var(--space-12) 0 var(--space-16);
+  padding: var(--space-12) 0 var(--space-12);
   border-bottom: var(--hairline);
   margin-bottom: var(--space-16);
 }
 
 .title {
   font-family: var(--font-display), Impact, sans-serif;
-  font-size: clamp(64px, 14vw, 160px);
+  font-size: clamp(56px, 12vw, 140px);
   letter-spacing: 0.04em;
   line-height: 1;
-  margin: var(--space-3) 0 var(--space-4);
+  margin: var(--space-3) 0 0;
   color: var(--text);
 }
 
-.kicker {
-  font-family: var(--font-serif), Georgia, serif;
-  font-style: italic;
-  color: var(--text-mood);
-  font-size: clamp(15px, 2.2vw, 19px);
-  max-width: 32ch;
-  margin: 0 auto;
-  line-height: 1.5;
+.subhead {
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 500;
+  margin-bottom: var(--space-6);
 }
 
 /* synopsis */
@@ -37,19 +36,61 @@
 }
 
 .synopsisBody {
-  font-size: clamp(18px, 2.4vw, 22px);
-  line-height: 1.6;
   color: var(--text);
-  margin-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
-.synopsisNote {
-  margin-top: var(--space-6);
-  font-size: 12px;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
+.synopsisBody p {
+  font-size: clamp(19px, 2.6vw, 24px);
+  line-height: 1.5;
+}
+
+/* why watch */
+.why {
+  max-width: 1000px;
+  margin: 0 auto var(--space-24);
+}
+
+.whyGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.whyCard {
+  padding: var(--space-6);
+  background: var(--near-black);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.whyIcon {
   color: var(--red);
-  opacity: 0.8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: var(--space-2);
+}
+
+.whyTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0;
+}
+
+.whyBody {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.55;
 }
 
 /* cast & crew */
@@ -60,7 +101,7 @@
 
 .castGrid {
   list-style: none;
-  margin: var(--space-6) 0 0;
+  margin: 0 0 var(--space-12);
   padding: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -119,9 +160,8 @@
   color: var(--text-dim);
 }
 
-/* crew */
 .crewList {
-  margin: var(--space-6) 0 0;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -146,55 +186,9 @@
 
 .crewName {
   margin: 0;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--text);
   line-height: 1.5;
-}
-
-/* why watch */
-.why {
-  margin: 0 auto;
-  padding-bottom: var(--space-16);
-}
-
-.whyGrid {
-  list-style: none;
-  margin: var(--space-6) 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
-}
-
-.whyCard {
-  padding: var(--space-6);
-  background: var(--near-black);
-  border: var(--hairline);
-  border-radius: var(--radius-md);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.whyNum {
-  font-family: var(--font-display), Impact, sans-serif;
-  font-size: 28px;
-  letter-spacing: 0.06em;
-  color: var(--red);
-  line-height: 1;
-}
-
-.whyTitle {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--text);
-  letter-spacing: 0;
-}
-
-.whyBody {
-  font-size: 14px;
-  color: var(--text-dim);
-  line-height: 1.55;
 }
 
 /* responsive */
@@ -203,7 +197,7 @@
     padding: var(--space-8) var(--gutter) 0;
   }
   .header {
-    padding: var(--space-6) 0 var(--space-12);
+    padding: var(--space-6) 0 var(--space-10);
     margin-bottom: var(--space-12);
   }
   .castGrid,

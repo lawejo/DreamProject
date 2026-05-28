@@ -23,6 +23,34 @@
   object-fit: contain;
 }
 
+/* §9.4 — diptych focus effect */
+.frame {
+  filter: grayscale(15%) brightness(0.88);
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.diptych:hover .frame,
+.diptych:focus-within .frame {
+  filter: grayscale(35%) brightness(0.65);
+}
+
+.poster:hover .frame,
+.poster:focus-within .frame {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.02);
+}
+
+/* §9.6 — keep brightness change, drop scale */
+@media (prefers-reduced-motion: reduce) {
+  .frame {
+    transition: filter 0.5s ease;
+  }
+  .poster:hover .frame,
+  .poster:focus-within .frame {
+    transform: none;
+  }
+}
+
 .placeholder {
   position: absolute;
   inset: 0;

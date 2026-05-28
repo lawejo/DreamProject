@@ -1,160 +1,94 @@
 .page {
-  max-width: var(--max-width);
+  max-width: 880px;
   margin: 0 auto;
   padding: var(--space-16) var(--gutter) 0;
 }
 
 .header {
   text-align: center;
-  padding: var(--space-12) 0 var(--space-16);
+  padding: var(--space-12) 0 var(--space-12);
   border-bottom: var(--hairline);
   margin-bottom: var(--space-16);
-  max-width: 60ch;
-  margin-inline: auto;
 }
 
 .title {
   font-family: var(--font-display), Impact, sans-serif;
-  font-size: clamp(40px, 7vw, 80px);
-  letter-spacing: 0.02em;
-  line-height: 1.05;
-  margin: var(--space-3) 0 var(--space-6);
+  font-size: clamp(48px, 10vw, 110px);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin: var(--space-3) 0 var(--space-8);
   color: var(--text);
 }
 
-.kicker {
-  font-family: var(--font-serif), Georgia, serif;
-  font-style: italic;
-  color: var(--text-mood);
-  font-size: clamp(15px, 2vw, 18px);
+.opener {
+  color: var(--text);
+  font-size: clamp(18px, 2.4vw, 22px);
   line-height: 1.55;
+  max-width: 56ch;
+  margin: 0 auto;
 }
 
-/* alternating section: text + still */
+/* sections */
 .section {
+  padding: var(--space-12) 0;
+  border-top: var(--hairline);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-12);
-  align-items: center;
-  padding: var(--space-16) 0;
-  max-width: 1080px;
-  margin-inline: auto;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-8);
+  align-items: flex-start;
 }
 
-.section + .section {
-  border-top: var(--hairline);
+.sectionTitle {
+  font-size: 13px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.4;
+  padding-top: 6px;
 }
 
 .text {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  max-width: 50ch;
 }
 
 .text p {
   color: var(--text-dim);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.7;
 }
 
-.sectionTitle {
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: var(--space-2);
-  letter-spacing: 0;
-}
-
-.sectionBlue .sectionTitle {
-  color: #8aa8bc;
-}
-
-.sectionRed .sectionTitle {
-  color: var(--red);
-}
-
-/* still figure */
-.still {
-  margin: 0;
-}
-
-.placeholder {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.35);
-  font-size: 11px;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-}
-
-.placeholderBlue {
-  background: linear-gradient(160deg, #0d1f2a 0%, #1a3340 60%, #0a1620 100%);
-}
-
-.placeholderRed {
-  background: linear-gradient(160deg, #2a0808 0%, #5a1010 55%, #1f0606 100%);
-}
-
-.placeholderNeutral {
-  background: linear-gradient(160deg, #111 0%, #1a1a1a 60%, #0a0a0a 100%);
-}
-
-.still figcaption {
-  margin-top: var(--space-3);
-  font-size: 12px;
-  color: var(--text-faint);
-  letter-spacing: 0.02em;
+/* closing */
+.closing {
+  text-align: center;
   font-style: italic;
+  color: var(--text-mood);
+  font-size: 18px;
+  margin: var(--space-16) auto var(--space-16);
+  max-width: 40ch;
+  padding: var(--space-8) 0;
+  border-top: var(--hairline);
 }
 
-/* transition strip — anchor for V2 blue→red wash */
-.transition {
-  max-width: 1080px;
-  margin: var(--space-8) auto;
-  padding: 0 var(--gutter);
-}
-
-.transitionBar {
-  height: 2px;
-  background: linear-gradient(
-    to right,
-    var(--blue-deep) 0%,
-    var(--blue-deep) 30%,
-    #3a1f25 50%,
-    var(--red-mid) 70%,
-    var(--red-mid) 100%
-  );
-  border-radius: 2px;
-  opacity: 0.6;
-}
-
-/* mobile: stack and reverse image-first sections so the text always reads naturally on top */
 @media (max-width: 768px) {
   .page {
     padding: var(--space-8) var(--gutter) 0;
   }
   .header {
-    padding: var(--space-6) 0 var(--space-12);
-    margin-bottom: var(--space-8);
+    padding: var(--space-6) 0 var(--space-10);
+    margin-bottom: var(--space-10);
   }
   .section {
     grid-template-columns: 1fr;
-    gap: var(--space-6);
-    padding: var(--space-12) 0;
+    gap: var(--space-4);
+    padding: var(--space-10) 0;
   }
-  /* swap order so text leads on every section */
-  .sectionBlue {
-    direction: ltr;
+  .sectionTitle {
+    padding-top: 0;
   }
-  .sectionBlue .text {
-    order: -1;
-  }
-  .section .text {
-    order: -1;
+  .closing {
+    margin: var(--space-12) auto;
   }
 }
