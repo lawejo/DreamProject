@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PosterDiptych from "./components/PosterDiptych";
+import Reveal from "./components/Reveal";
 import styles from "./page.module.css";
 
 const doorways = [
@@ -23,24 +24,28 @@ const doorways = [
 export default function HomePage() {
   return (
     <div className={styles.home}>
-      <section className={styles.heroTop}>
+      <Reveal className={styles.heroTop} delay={50}>
         <p className={styles.tagline}>
           A psycho-romance
           <span className={styles.bullet}>·</span>
           Adapted from the bestselling novel
         </p>
-      </section>
+      </Reveal>
 
-      <section className={styles.posters}>
+      <Reveal className={styles.posters} delay={250}>
         <div className={styles.postersInner}>
           <PosterDiptych
             blueSrc="/images/BluePoster.jpeg"
             redSrc="/images/RedPoster.jpeg"
           />
         </div>
-      </section>
+      </Reveal>
 
-      <section className={styles.doorways} aria-label="Explore the site">
+      <Reveal
+        className={styles.doorways}
+        delay={450}
+        aria-label="Explore the site"
+      >
         <ul className={styles.doorwayList}>
           {doorways.map((d) => (
             <li key={d.href} className={styles.doorwayItem}>
@@ -56,7 +61,7 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
-      </section>
+      </Reveal>
     </div>
   );
 }
