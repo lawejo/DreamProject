@@ -46,8 +46,18 @@
   --hairline: 0.5px solid var(--border);
 }
 
+@media (max-width: 768px) {
+  :root {
+    --gutter: 1.5rem;
+  }
+}
+
 * {
   box-sizing: border-box;
+}
+
+html {
+  overflow-x: clip; /* prevent 100vw full-bleed elements from adding horizontal scroll */
 }
 
 html,

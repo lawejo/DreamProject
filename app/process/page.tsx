@@ -37,8 +37,10 @@ export default function ProcessPage() {
 
       {/* §9.5 anchor: blue→red scroll wash */}
       <ScrollWash ariaLabel="Two worlds, two colors">
-        <h2 className={styles.sectionTitle}>Two worlds, two colors</h2>
-        <div className={styles.text}>
+        <h2 className={`${styles.sectionTitle} ${styles.onWash}`}>
+          Two worlds, two colors
+        </h2>
+        <div className={`${styles.text} ${styles.onWashText}`}>
           <p>
             We built the film around a duality you can almost feel as a
             temperature. The romance is blue — cool, soft, naturalistic, the
