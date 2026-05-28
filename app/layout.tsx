@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Bebas_Neue, Instrument_Serif } from "next/font/google";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import Grain from "./components/Grain";
 import "./globals.css";
 
 const inter = Inter({
@@ -51,6 +52,7 @@ export default function RootLayout({
         <Nav />
         <main>{children}</main>
         <Footer />
+        <Grain />
       </body>
     </html>
   );
