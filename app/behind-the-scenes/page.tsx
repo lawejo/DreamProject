@@ -82,7 +82,7 @@ const locations: Location[] = [
       },
       {
         label: "still · cinema",
-        caption: "Two people watching the same thing differently.",
+        caption: "You can tell they're not watching the same film.",
       },
       {
         label: "still · bench",

@@ -15,9 +15,8 @@ export default function ProcessPage() {
         <p className="label">The process</p>
         <h1 className={styles.title}>The process</h1>
         <p className={`serif ${styles.opener}`}>
-          Dream started as a question — what would it look like if a film let
-          you fall in love at the same speed its main character did, and then
-          asked you to step back and see what you&apos;d really been watching?
+          We wanted to make something that tricks you. You think you&apos;re
+          watching a love story. By the beach scene, you&apos;re not so sure.
         </p>
       </header>
 
@@ -25,12 +24,11 @@ export default function ProcessPage() {
         <h2 className={styles.sectionTitle}>From novel to screenplay</h2>
         <div className={styles.text}>
           <p>
-            The bestselling novel gave us the spine: a quiet boy, a girl who
-            arrives like an answer, a slow unraveling. Adapting it meant
-            choosing what to keep silent. The screenplay was written
-            collaboratively — by the cast, the director, and the editor
-            together — so the language between the two leads belongs to the
-            people speaking it.
+            The novel gave us the shape of it. A boy, a girl, a beach. Adapting
+            it meant figuring out what to leave out. We wrote the screenplay
+            together, all five of us, which is unusual. But it meant the
+            dialogue between Syan and Angela belongs to them. They wrote most
+            of it.
           </p>
         </div>
       </section>
@@ -42,14 +40,11 @@ export default function ProcessPage() {
         </h2>
         <div className={`${styles.text} ${styles.onWashText}`}>
           <p>
-            We built the film around a duality you can almost feel as a
-            temperature. The romance is blue — cool, soft, naturalistic, the
-            world he wishes he lived in. The other half is red — warmer,
-            closer, more honest about what&apos;s actually happening to him.
-          </p>
-          <p>
-            The two posters aren&apos;t alternatives; they&apos;re the same
-            film, photographed from both sides of his head.
+            The blue scenes are cooler. Less edited. He&apos;s happy there.
+            The red ones are tighter and warmer, and something feels off in
+            them. That was the plan. We wanted two posters because
+            it&apos;s basically two films. Or the same film from two
+            different angles.
           </p>
         </div>
       </ScrollWash>
@@ -58,12 +53,12 @@ export default function ProcessPage() {
         <h2 className={styles.sectionTitle}>A camera that follows the mind</h2>
         <div className={styles.text}>
           <p>
-            Maciej Gach&apos;s cinematography moves with Syan&apos;s
-            interiority. The film opens zoomed-out — Syan alone at a table in
-            a crowded canteen — and slowly closes in until we&apos;re behind
-            his shoulder, then inside his POV. A long spiral-around-the-head
-            transition takes us out of the canteen and into the dream. From
-            there, the camera keeps choosing intimacy over information.
+            The camera starts wide. Syan at a table in a full canteen, nobody
+            talking to him. It gets closer. By the end of the first scene
+            you&apos;re inside his head. Maciej had this idea for a spiral
+            shot that wraps around Syan&apos;s face and comes out somewhere
+            else entirely. We used it as the transition into the dream.
+            After that the camera stays close.
           </p>
         </div>
       </section>
@@ -74,11 +69,10 @@ export default function ProcessPage() {
         </h2>
         <div className={styles.text}>
           <p>
-            Look closely and the film tells you what it is from the beginning.
-            The light shifts when Angie walks away. Color filters drift. A
-            figure blends into a flame. These weren&apos;t accidents in the
-            edit — they were planned at the script stage, small admissions
-            hidden in plain sight, waiting for a second viewing.
+            The light changes when Angie leaves a shot. The colour filters
+            shift. At one point she walks into a candle flame and disappears.
+            None of that is accidental. We put it in the script. It&apos;s
+            there on a first watch too. You probably won&apos;t catch it.
           </p>
         </div>
       </section>

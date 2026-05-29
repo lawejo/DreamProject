@@ -86,18 +86,18 @@ function IconFlame() {
 const hooks = [
   {
     icon: <IconBook />,
-    title: "Adapted from the page",
-    body: "A small, faithful adaptation of a bestselling novel about loneliness and longing.",
+    title: "Based on the novel",
+    body: "Based on a novel that people actually read. We tried to stay close to it.",
   },
   {
     icon: <IconEye />,
-    title: "Two worlds, one film",
-    body: "A blue half and a red half — a romance and the mind behind it.",
+    title: "Shot twice",
+    body: "The romance and then what's underneath it. Two posters, two halves, one film.",
   },
   {
     icon: <IconFlame />,
-    title: "A debut with teeth",
-    body: "A student production with the ambition of a first feature.",
+    title: "Made by students",
+    body: "Doesn't look like it was.",
   },
 ];
 
