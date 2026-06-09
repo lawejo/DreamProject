@@ -25,19 +25,6 @@ type Location = {
 
 const locations: Location[] = [
   {
-    id: "canteen",
-    name: "The canteen",
-    tone: "neutral",
-    context: "The opening. Cameras hidden among real students.",
-    tiles: [
-      {
-        label: "still · canteen wide",
-        caption: "Where Syan begins — alone in the noise.",
-        span: "wide",
-      },
-    ],
-  },
-  {
     id: "castle",
     name: "The castle",
     tone: "blue",
@@ -67,26 +54,6 @@ const locations: Location[] = [
         label: "still · underwater",
         caption: "Take seventeen.",
         span: "tall",
-      },
-    ],
-  },
-  {
-    id: "montage",
-    name: "Amusement park · cinema · bench",
-    tone: "blue",
-    context: "The montage scenes — the blue half of the film.",
-    tiles: [
-      {
-        label: "still · park",
-        caption: "The blue half of the film.",
-      },
-      {
-        label: "still · cinema",
-        caption: "You can tell they're not watching the same film.",
-      },
-      {
-        label: "still · bench",
-        caption: "The bench was a real bench. Nobody moved it.",
       },
     ],
   },

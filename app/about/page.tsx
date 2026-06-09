@@ -114,11 +114,11 @@ export default function AboutPage() {
           Synopsis
         </h2>
         <div className={`serif ${styles.synopsisBody}`}>
-          <p>A lonely college student meets a girl at a castle.</p>
+          <p>A lonely student meets a girl at a castle.</p>
           <p>
-            What follows is everything he&apos;s been waiting for — long walks,
-            late afternoons at the amusement park, quiet hours at the movies, a
-            closeness he didn&apos;t know he was capable of.
+            What follows is everything he&apos;s been waiting for - long walks,
+            late afternoons at the forest and someone who finally understands
+            him.
           </p>
           <p>
             Then a sunset on the beach asks whether any of it was real.
